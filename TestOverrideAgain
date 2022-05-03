@@ -1,0 +1,143 @@
+public class TestOverrideAgain {
+//Object slicing....
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Founder f = new Founder();
+		/*f.breathIn();
+		f.breathOut();
+		f.fear(null);
+		f.reproduction();
+		f.eat();
+		f.sleep();
+		f.giveBirth();
+		f.think(null);
+		f.active();*/
+	//	f.study();
+	/*	f.giveExam(ExamPaper e);
+	/*	f.work();
+		f.execute();
+		f.manage();
+		f.direct();
+		f.found();*/
+		f.think("i have an idea");
+	}
+
+}
+
+class LivingBeing
+{
+	void breathIn() { 
+		System.out.println("Living Being is breathing in...");
+	}
+	void breathOut() { 
+		System.out.println("Living Being is breathing out...");
+	}
+}
+class Tree1 extends LivingBeing
+{
+	
+}
+class Heart
+{
+	void pumping() { }
+}
+class Facefear 
+{
+	
+}
+class Thought
+{
+	
+}
+class Idea1
+{
+	
+}
+class ExamPaper
+{
+	
+}
+class Animal extends LivingBeing
+{
+	Heart h = new Heart(); 
+	
+	void fear(Facefear f1) {
+		System.out.println("Face the fear...");
+	}
+	void eat() {
+		System.out.println("eating.......");
+	}
+	void sleep() {
+		System.out.println("sleeping......");
+	}
+	
+}
+class Mammal1 extends Animal
+{
+	void giveBirth() {
+		System.out.println("Mammal is giving birth....");
+	}
+}
+class Reptile extends Animal
+{
+	void layEggs() {
+		System.out.println("Reptile is laying eggs....");
+	}
+}
+class Human extends Mammal1
+{
+	String think(String str) {
+		System.out.println("Human is thinking.....");
+		return str;
+	}
+}
+class Person1 extends Human
+{
+	void active() {
+		System.out.println("Person is active......");	
+	}
+}
+class Student extends Person1
+{
+	void study()
+	{
+		System.out.println("Student is studying very hard");
+	}
+	
+	Result giveExam(ExamPaper e) {
+		System.out.println("Student is writing exam...");
+		return giveExam(e);
+	}
+}
+class Employee extends Student
+{
+	void work() {
+		System.out.println("Employee is working......");
+	}
+}
+class Executive extends Employee
+{
+	void execute() {
+		System.out.println("Executive is executing......");
+	}
+}
+class Manager extends Executive
+{
+	void manage() {
+		System.out.println("Maanger is managing...");
+	}
+}
+class Director extends Manager
+{
+	void direct() {
+		System.out.println("Director is directing...");
+	}
+}
+
+class Founder extends Director
+{
+	void found() {
+		System.out.println("Found a company.....");
+	}
+}
+		
