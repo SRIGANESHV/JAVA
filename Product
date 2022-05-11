@@ -1,0 +1,57 @@
+package one2many;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="PRODUCT")
+public class Product {
+	
+	@Id
+	@Column(name="PRODID")
+	private int productId;
+	
+	@Column(name="DESCRIP")
+	private String productDescription;
+	
+	@ManyToOne
+	@JoinColumn(name="PRODID")
+	private Item item;
+	
+	@OneToMany(mappedBy="product", fetch = FetchType.EAGER, cascade = CascadeType.ALL )
+	private List<Price> priceList;
+
+	public int getProductId() {
+		return productId;
+	}
+
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+
+	public String getProductDescription() {
+		return productDescription;
+	}
+
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
+	}
+
+	public Product(int productId, String productDescription, Item item, List<Price> priceList) {
+		super();
+		this.productId = productId;
+		this.productDescription = productDescription;
+		this.item = item;
+		this.priceList = priceList;
+	}
+
+}
