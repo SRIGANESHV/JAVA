@@ -1,0 +1,51 @@
+import java.time.LocalDate;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+import org.junit.jupiter.api.Test;
+
+import one2one.BankApplicant;
+import one2one.PanCard;
+
+public class TestPan {
+	EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("MyJPA"); // META-INF/persistence.xml
+																									// ->
+																									// persistence-unit
+																									// name
+	// System.out.println("EntityManagerFactory : "+entityManagerFactory);
+	EntityManager entityManager = entityManagerFactory.createEntityManager();
+	// System.out.println("EntityManager: "+entityManager);
+
+	@Test
+	public void enterNewPanCardToNewBankApplicant() {
+		EntityTransaction et = entityManager.getTransaction();
+		et.begin();
+
+		BankApplicant baObj = new BankApplicant();
+		baObj.setApplicantId("123");
+		baObj.setApplicantName("JACK");
+		baObj.setApplicantAddress("MUMBAI");
+		baObj.setAge(18);
+		baObj.setEmailId("jack@gmail.com");
+		baObj.setGender('M');
+		baObj.setMobileNumber(912346789);
+
+		PanCard pc = new PanCard();
+		pc.setPanNumber("ABCPS1234A");
+		pc.setDob(LocalDate.of(1987, 05, 10));
+		pc.setFatherName("ROCK");
+
+		baObj.setPancard(pc);
+		pc.setBankApplicant(baObj);
+
+		System.out.println("trying to persist....");
+		entityManager.persist(baObj);
+		entityManager.persist(pc);
+		System.out.println("Persisted....");
+		et.commit();
+
+	}
+}
