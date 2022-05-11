@@ -1,0 +1,51 @@
+package one2one;
+import java.time.LocalDate;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "Pancard")
+
+public class PanCard {
+	
+		@Id
+		private String panNumber;
+		
+		private String fatherName;
+		private LocalDate dob;
+		
+		@OneToOne
+		@JoinColumn(name="applicant_id")
+		private BankApplicant bankApplt;
+		
+		
+		public String getPanNumber() {
+			return panNumber;
+		}
+		public void setPanNumber(String panNumber) {
+			this.panNumber = panNumber;
+		}
+		public String getFatherName() {
+			return fatherName;
+		}
+		public void setFatherName(String fatherName) {
+			this.fatherName = fatherName;
+		}
+		public LocalDate getDob() {
+			return dob;
+		}
+		public void setDob(LocalDate dob) {
+			this.dob = dob;
+		}
+		public BankApplicant getbankApplt() {
+			return bankApplt;
+		}
+		public void setBankApplicant(BankApplicant bankApplt) {
+			this.bankApplt = bankApplt;
+		}
+}
