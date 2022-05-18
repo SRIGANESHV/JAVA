@@ -1,0 +1,49 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
+import { SimpleInterestCalculatorComponent } from './simple-interest-calculator/simple-interest-calculator.component';
+import { FormsModule } from '@angular/forms';
+import { BankApplicantComponent } from './bank-applicant/bank-applicant.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { SquarePipe } from './square.pipe';
+
+import { SquareRootPipe } from './square-root.pipe';
+import { SimpleInterestPipe } from './simple-interest.pipe';
+import { BankAdminLoginPipe } from './bank-admin-login.pipe';
+import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
+import { FlowersModule } from './flowers/flowers.module';
+import { AnimalsModule } from './animals/animals.module';
+import { BirdsModule } from './birds/birds.module';
+import {HttpClientModule} from '@angular/common/http';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    RegistrationComponent,
+    LoginComponent,
+    SimpleInterestCalculatorComponent,
+    BankApplicantComponent,
+    UserDetailsComponent,
+    SquarePipe,
+    SquareRootPipe,
+    SimpleInterestPipe,
+    BankAdminLoginPipe,
+    CurrencyConverterComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    FlowersModule,
+    AnimalsModule,
+    BirdsModule,
+    HttpClientModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
