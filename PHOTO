@@ -1,0 +1,14 @@
+ <td>  {{userDetails.albumId}}</td>
+        <td>  {{userDetails.id}}</td>
+        <td>  {{userDetails.title}}</td>
+        <td>  <a href ="{{userDetails.url}}"> CLICK HERE
+        </a> </td>
+        <td>  <img src= "{{userDetails.thumbnailUrl}}"> </td>
+        
+        
+        
+         <th>albumId</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>url</th>
+        <th>thumbnailUrl</th>
