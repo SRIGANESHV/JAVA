@@ -1,0 +1,22 @@
+
+ref:https://github.com/hitencodes/admin-panel
+ref mat icons:https://www.angularjswiki.com/angular/angular-material-icons-list-mat-icon-list/
+	      https://www.softaox.info/1000-angular-material-icons-list-mat-icon/
+
+Install
+
+npm install -save @angular/material
+
+Step 1 	ng new ProjectName
+
+Step 2 	ng g c ComponentName
+
+
+Step 3 	add path in app-routing module.ts
+	under const routes: Routes = [];
+	
+	{path: '', redirectTo: 'home', pathMatch: 'full'}
+	{path:'home',component:HomeComponent}
+	{path:'dashboard',component:DashboardComponent}
+	{path:'sidenav',component:SidenavComponent}
+	{path:'header',component:HeaderComponent}
