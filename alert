@@ -1,0 +1,2 @@
+alert("Do you want to Approve the selected record");
+    alert("Record Approved & Email sent successfully");
